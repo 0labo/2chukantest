@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中1 2学期中間考査 対策サイト</title>
+<style>
+:root{
+  --ink:#1b2330; --ink2:#4a5568; --ink3:#7b8794;
+  --bg:#f4f6fa; --card:#ffffff; --line:#dfe4ec; --soft:#eef2f8;
+  --brand:#2f5fd0; --brand-soft:#e8efff;
+  --ok:#1f9d63; --warn:#c9820a; --danger:#cf3f3f;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{--ink:#eef2f8;--ink2:#b8c1cf;--ink3:#8c96a6;--bg:#12161d;--card:#1a212b;--line:#2b3442;--soft:#212a36;--brand:#7ba2ff;--brand-soft:#1f2b45;--ok:#4dd39a;--warn:#e8b04b;--danger:#ff8a8a}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.7;font-size:15px}
+.wrap{max-width:960px;margin:0 auto;padding:18px 14px 60px}
+header.top{background:linear-gradient(135deg,#2f5fd0,#5b8def);color:#fff;border-radius:var(--r);padding:20px 20px 18px;box-shadow:0 6px 18px rgba(30,60,140,.18)}
+header.top h1{margin:0 0 4px;font-size:20px;letter-spacing:.02em}
+header.top p{margin:0;font-size:13px;opacity:.92}
+.count{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.cbox{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:12px;padding:10px 12px}
+.cbox .lab{font-size:11px;opacity:.9}
+.cbox .num{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.cbox .num small{font-size:12px;font-weight:500;margin-left:2px}
+.cbox .tgt{font-size:11px;opacity:.85;margin-top:2px}
+h2.sec{font-size:16px;margin:26px 0 10px;padding-left:9px;border-left:4px solid var(--brand)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;box-shadow:0 1px 2px rgba(20,30,50,.04)}
+table.sche{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+table.sche th,table.sche td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.sche th{background:var(--soft);font-size:12.5px;color:var(--ink2);font-weight:600;white-space:nowrap}
+table.sche tr:last-child td{border-bottom:none}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--brand-soft);color:var(--brand);margin-right:4px;white-space:nowrap}
+.pill.warn{background:#fdf3e0;color:var(--warn)}
+.pill.dan{background:#fdeaea;color:var(--danger)}
+.pill.ok{background:#e6f6ef;color:var(--ok)}
+@media (prefers-color-scheme: dark){.pill.warn{background:#33290f}.pill.dan{background:#3a1f1f}.pill.ok{background:#16302a}}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:22px 0 12px}
+.tab{border:1px solid var(--line);background:var(--card);color:var(--ink2);padding:8px 13px;border-radius:999px;font-size:13.5px;cursor:pointer;font-weight:600}
+.tab[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.panel{display:none}
+.panel.on{display:block}
+.blk{border-left:3px solid var(--line);padding-left:12px;margin:14px 0}
+.blk b{color:var(--brand)}
+ul.li{margin:6px 0 0;padding-left:20px}
+ul.li li{margin:3px 0}
+.note{background:var(--soft);border-radius:10px;padding:10px 12px;font-size:13.5px;color:var(--ink2);margin:10px 0}
+.adv{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;font-size:13.5px;white-space:pre-wrap;margin-top:12px}
+.chk{list-style:none;margin:8px 0 0;padding:0}
+.chk li{display:flex;gap:9px;align-items:flex-start;padding:6px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.chk li:last-child{border-bottom:none}
+.chk input{margin-top:5px;width:16px;height:16px;flex:0 0 16px;accent-color:var(--brand)}
+.chk li.done label{color:var(--ink3);text-decoration:line-through}
+.chk label{cursor:pointer}
+q{color:var(--brand);font-weight:600}
+details{background:var(--soft);border-radius:10px;padding:8px 12px;margin:7px 0;font-size:14px}
+details summary{cursor:pointer;font-weight:600;color:var(--ink)}
+details[open] summary{margin-bottom:6px}
+.ans{font-size:13.5px;color:var(--ink2)}
+.bar{display:flex;align-items:center;gap:10px;margin:10px 0 2px;font-size:13px;color:var(--ink2)}
+.prog{flex:1;height:9px;background:var(--soft);border-radius:999px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2f5fd0,#5b8def);transition:width .25s}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink2);border-radius:999px;padding:5px 12px;font-size:12.5px;cursor:pointer}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:640px){.grid2{grid-template-columns:1fr}.count{grid-template-columns:1fr}}
+footer{margin-top:34px;font-size:12px;color:var(--ink3);text-align:center;line-height:1.8}
+a{color:var(--brand)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>中学1年 2学期中間考査 対策サイト</h1>
+  <p>9/29(火)①社会②国語③数学　／　9/30(水)①理科②英語③LHR　／　各50分・下校12:10</p>
+  <div class="count">
+    <div class="cbox"><div class="lab">9/29(火) 開始まで</div><div class="num" id="cd1">—</div><div class="tgt">社会・国語・数学</div></div>
+    <div class="cbox"><div class="lab">9/30(水) 開始まで</div><div class="num" id="cd2">—</div><div class="tgt">理科・英語・LHR</div></div>
+  </div>
+</header>
+
+<h2 class="sec">試験時間割</h2>
+<table class="sche">
+  <tr><th>日</th><th>時限・科目</th><th>提出・特記</th></tr>
+  <tr>
+    <td><b>9/29(火)</b></td>
+    <td><span class="pill">① 社会</span><span class="pill">② 国語</span><span class="pill">③ 数学</span>各50分</td>
+    <td>下校 12:10・昼食不要<br><span class="pill dan">社会の問題集を考査当日に提出</span></td>
+  </tr>
+  <tr>
+    <td><b>9/30(水)</b></td>
+    <td><span class="pill">① 理科</span><span class="pill">② 英語</span><span class="pill">③ LHR</span>各50分</td>
+    <td>下校 12:10・昼食不要<br><span class="pill warn">理科の問題集ノートは放課後までに提出</span></td>
+  </tr>
+</table>
+<div class="note">※未提出課題がある人は、考査終了後に取り組みます。<b>昼食を用意</b>しておきましょう。数学は<b>コンパスと定規</b>が必要です。</div>
+
+<div class="tabs" role="tablist">
+  <button class="tab" role="tab" aria-selected="true" data-t="plan">3日間プラン</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="kokugo">国語</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="shakai">社会</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="sugaku">数学</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="rika">理科</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="eigo">英語</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="teishutsu">提出物・持ち物</button>
+</div>
+
+<!-- ============ プラン ============ -->
+<section class="panel on" id="p-plan">
+  <div class="grid2">
+    <div class="card">
+      <b>9/28(月) 前日</b><div style="font-size:12.5px;color:var(--ink3)">明日は社会・国語・数学</div>
+      <ul class="li">
+        <li><span class="pill dan">最優先</span>社会の問題集の間違い直しを完成させる（<b>明日提出</b>）＋年表で流れを音読（90分）</li>
+        <li>国語 百人一首⑪〜⑳の暗誦＋漢字4級⑧＋竹取物語（60分）</li>
+        <li>数学 比例・反比例の式とグラフ、おうぎ形・作図。コンパスと定規を筆箱へ（60分）</li>
+        <li>理科ノートの残り＋英単語を少し（30分）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <b>9/29(火) 1日目</b><div style="font-size:12.5px;color:var(--ink3)">社会→国語→数学・12:10下校</div>
+      <ul class="li">
+        <li>朝 社会の問題集を提出できる形で持参</li>
+        <li>午後 昼寝15分→理科に全振り（密度・濃度の計算、気体の表、状態変化）（2.5h）</li>
+        <li>理科 問題集ノート（P59以降）を仕上げる（90分）</li>
+        <li>英語 Lesson5〜7の「型」の確認＋単語帳 p.139〜184 を1周（90分）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <b>9/30(水) 2日目</b><div style="font-size:12.5px;color:var(--ink3)">理科→英語→LHR</div>
+      <ul class="li">
+        <li>朝 理科のノートを持参（放課後までに提出）</li>
+        <li>理科の前に気体の集め方・性質の表をもう1回</li>
+        <li>英語の前に道案内の決まり文句と不規則動詞</li>
+        <li>放課後 理科ノート提出を完了させる</li>
+      </ul>
+    </div>
+    <div class="card">
+      <b>この3日の落とし穴</b>
+      <ul class="li">
+        <li>比例・反比例を<b>小学校の解き方</b>で解くと評価されない場合あり</li>
+        <li>作図は<b>コンパス・定規</b>必須。机上で練習しておく</li>
+        <li>「獣の奏者」は<b>全巻</b>が範囲で内容問題が出る</li>
+        <li>理科の問題集は<b>P59以降が課題提出</b>対象</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 国語 ============ -->
+<section class="panel" id="p-kokugo">
+  <div class="card">
+    <h3 style="margin:0 0 6px">考査範囲</h3>
+    <div class="blk"><b>教科書</b><ul class="li"><li>「月夜の浜辺」</li><li>「ニュースの見方を考えよう」</li><li>「竹取物語」</li></ul></div>
+    <div class="blk"><b>文法</b><ul class="li"><li>動詞（活用の種類・活用形・活用表）</li></ul></div>
+    <div class="blk"><b>アシスト常用漢字</b><ul class="li"><li>4級⑧（＝4級の8回目の範囲）</li></ul></div>
+    <div class="blk"><b>課題図書</b><ul class="li"><li>「獣の奏者」<span class="pill dan">全巻・内容問題が出題</span></li></ul></div>
+    <div class="blk"><b>百人一首</b><ul class="li"><li>⑪〜⑳</li></ul></div>
+    <div class="blk"><b>その他</b><ul class="li"><li>特になし</li></ul></div>
+
+    <h3>直前ポイント</h3>
+    <ul class="li">
+      <li>百人一首⑪〜⑳は<b>満点狙い</b>。歴史的仮名遣いをマーカーでチェックしてから暗誦する。</li>
+      <li>動詞は<b>活用の種類</b>（五段・上一段・下一段・カ行変格・サ行変格）と<b>活用形</b>（未然・連用・終止・連体・仮定・命令）を、活用表を白紙に再現できるかで点差がつく。</li>
+      <li>漢字はアシスト4級⑧だけでなく、<b>教科書に出てくる新出漢字</b>も書けるように練習する。</li>
+      <li>「獣の奏者」は、あらすじ暗記ではなく<b>自分の言葉で説明できる</b>状態にする（主要人物と用語の整理）。</li>
+      <li>意味調べをした単語は、意味を正確に説明できるようにする。</li>
+    </ul>
+    <div class="adv"><b>先生からのアドバイス</b>
+百人一首は確実に暗誦し、歴史的仮名遣いに留意して満点を取りましょう。マーカーで歴史的仮名遣いをチェックするなど、工夫した学習をしましょう。漢字はアシスト常用漢字問題集だけでなく、教科書に出てくる新出漢字もしっかりと書けるように練習してください。また、意味調べをした単語は、意味を正確に説明できるようにしてください。</div>
+  </div>
+
+  <h2 class="sec">自己チェック</h2>
+  <ul class="chk" data-list="kokugo">
+    <li><input type="checkbox" id="k1"><label for="k1">百人一首⑪〜⑳を、歴史的仮名遣いまで含めて暗誦できた</label></li>
+    <li><input type="checkbox" id="k2"><label for="k2">動詞の活用表を白紙に書き出せた（五段・上一段・下一段・カ変・サ変）</label></li>
+    <li><input type="checkbox" id="k3"><label for="k3">アシスト4級⑧の漢字を全部書けた</label></li>
+    <li><input type="checkbox" id="k4"><label for="k4">教科書の新出漢字も練習した</label></li>
+    <li><input type="checkbox" id="k5"><label for="k5">「竹取物語」の流れと人物を説明できる</label></li>
+    <li><input type="checkbox" id="k6"><label for="k6">「獣の奏者」の主要人物と用語を自分の言葉で説明できる</label></li>
+    <li><input type="checkbox" id="k7"><label for="k7">意味調べした語の意味を口で説明できた</label></li>
+  </ul>
+
+  <h2 class="sec">確認クイズ（答えを開く前に声に出す）</h2>
+  <details><summary>Q1. 「月夜の浜辺」の冒頭の一節を暗誦できる？</summary><div class="ans">「月夜の浜辺」は、月夜の浜辺に落ちている「おりくず」を拾おうとすると、それは「さびしい」ので置いて帰り、またの日も同じことをしてしまう、という展開。作者の心情の揺れを押さえる。</div></details>
+  <details><summary>Q2. 動詞の活用形は6つ。全部言える？</summary><div class="ans">未然形・連用形・終止形・連体形・仮定形・命令形。</div></details>
+  <details><summary>Q3. 活用の種類は5つ。それぞれの見分け方は？</summary><div class="ans">五段活用／上一段活用（「見る・起きる」など）／下一段活用（「寝る・食べる」など）／カ行変格活用（「来る」）／サ行変格活用（「する」「〜する」）。命令形や「ない」の付き方で判別する。</div></details>
+  <details><summary>Q4. 「獣の奏者」の主要人物と、範囲が全巻である確認</summary><div class="ans">第1巻（闘蛇編）・第2巻（王獣編）を含む<b>全巻</b>。主要人物と、闘蛇・王獣などの用語を説明できるようにしておく。</div></details>
+</section>
+
+<!-- ============ 社会 ============ -->
+<section class="panel" id="p-shakai">
+  <div class="card">
+    <h3 style="margin:0 0 6px">考査範囲</h3>
+    <div class="blk"><b>教科書</b><ul class="li"><li>p.70〜89</li></ul></div>
+    <div class="blk"><b>資料集</b><ul class="li"><li>p.54〜73</li></ul></div>
+    <div class="blk"><b>問題集</b><ul class="li">
+      <li>p.28の <b>1の⑨・⑩・⑪・⑫・⑬</b>、<b>2</b></li>
+      <li>p.29の <b>5</b></li>
+      <li>p.30〜37</li>
+      <li>p.40の <b>1の①</b>、<b>2の(1)(4)(5)(8)</b></li>
+      <li>p.41の <b>3</b></li>
+      <li>p.43の <b>3の④・⑤</b>、<b>(6)以外</b></li>
+      <li>p.44〜47</li>
+    </ul></div>
+    <div class="blk"><b>その他</b><ul class="li"><li><span class="pill dan">社会の考査当日に「問題集」を提出すること</span></li></ul></div>
+
+    <h3>出題される時代</h3>
+    <div class="note"><b>鎌倉幕府の成立</b> → … → 室町時代の<b>産業の発達と民衆の生活</b>まで。歴史分野は「出来事の流れ」と「人物の役割」が核。世界地図や白地図で位置関係も確認。</div>
+
+    <h3>直前ポイント</h3>
+    <ul class="li">
+      <li><b>間違い直しのやり直し</b>が最優先。弱点を確実に克服する。</li>
+      <li>時系列で流れを<b>声に出して</b>語れるか確認する。</li>
+      <li>「丸暗記」ではなく「なぜそうなったのか」「その後どうなったのか」を意識する。</li>
+      <li>指定ページが細かいので、<b>やるページを付箋で立てて</b>から着手する。</li>
+    </ul>
+    <div class="adv"><b>先生からのアドバイス</b>
+今回の考査では、「鎌倉幕府の成立」から室町時代の「産業の発達と民衆の生活」までが範囲です。歴史分野では、出来事の流れと人物の役割をしっかり押さえることが重要です。また、世界地図や白地図で位置関係を確認しておくと、歴史の理解が深まります。
+学習のコツとしては、時系列で流れを語れるか声に出して確認する。問題集の間違い直しをやり直すことで、弱点を確実に克服する。知識を「丸暗記」するだけでなく、「なぜそうなったのか」「その後どうなったのか」を意識して復習しましょう。理解のつながりを意識すると、記述問題や応用問題にも強くなります。</div>
+  </div>
+
+  <h2 class="sec">自己チェック</h2>
+  <ul class="chk" data-list="shakai">
+    <li><input type="checkbox" id="s1"><label for="s1">問題集の指定ページを全部やった（p.28〜29・30〜37・40〜41・43・44〜47の指定分）</label></li>
+    <li><input type="checkbox" id="s2"><label for="s2">間違い直しを最後までやり直した</label></li>
+    <li><input type="checkbox" id="s3"><label for="s3">鎌倉幕府の成立から室町まで、年表を見ずに口で語れた</label></li>
+    <li><input type="checkbox" id="s4"><label for="s4">重要人物の役割をセットで言える</label></li>
+    <li><input type="checkbox" id="s5"><label for="s5">白地図・世界地図で位置を確認した</label></li>
+    <li><input type="checkbox" id="s6"><label for="s6">資料集p.54〜73のグラフ・写真を1周見た</label></li>
+    <li><input type="checkbox" id="s7"><label for="s7">問題集を提出できる状態にしてある（9/29当日提出）</label></li>
+  </ul>
+
+  <h2 class="sec">確認クイズ</h2>
+  <details><summary>Q1. 「なぜそうなったのか」まで説明できる？例：鎌倉幕府が成立した背景</summary><div class="ans">源平の争乱を経て源頼朝が勢力を確立し、幕府が開かれた流れ。成立年は諸説あり、教科書の表記で覚えること。</div></details>
+  <details><summary>Q2. 室町時代の「産業の発達と民衆の生活」で押さえる3点は？</summary><div class="ans">農業・手工業・商業の発達、交通・都市のようす、民衆の生活・文化（村や町の様子）。資料集の図版で確認する。</div></details>
+  <details><summary>Q3. 時系列で語れるか（30秒チャレンジ）</summary><div class="ans">鎌倉幕府成立 → 執権政治 → 元寇 → 幕府の滅亡 → 室町幕府の成立 → 南北朝 → 室町時代の産業・民衆。声に出して1分以内に語れたら合格。</div></details>
+</section>
+
+<!-- ============ 数学 ============ -->
+<section class="panel" id="p-sugaku">
+  <div class="card">
+    <h3 style="margin:0 0 6px">考査範囲</h3>
+    <div class="blk"><b>教科書</b><ul class="li"><li>P114〜P181</li><li>P260〜P263</li><li>P276〜P283</li></ul></div>
+    <div class="blk"><b>STEP演習</b><ul class="li"><li>第2巻 P48〜P120</li><li>第3巻 P41〜P54</li></ul></div>
+    <div class="blk"><b>その他</b><ul class="li"><li>STEP演習の提出については担当の先生の指示に従うこと</li></ul></div>
+
+    <h3>範囲の対応（確認済みの情報から）</h3>
+    <table class="sche">
+      <tr><th>範囲</th><th>内容</th></tr>
+      <tr><td>P114〜P181</td><td><b>4章 変化と対応</b>（関数・比例・反比例）＋<b>5章 平面図形</b>（図形の移動・円とおうぎ形・基本の作図）</td></tr>
+      <tr><td>P260〜P263</td><td>巻末の<b>「力をつけよう」</b>（確認済み）</td></tr>
+      <tr><td>P276〜P283</td><td>巻末の<b>「力をつけよう」</b>（確認済み）</td></tr>
+    </table>
+    <div class="note">章の区切りは 4章 変化と対応＝P114〜、5章 平面図形＝P148〜、章末は 4章 p.133〜134・5章 p.164〜165 という構成です <a href="https://service.obunsha.co.jp/tokuten/chuteite/pdf/teikitest_1m.pdf">教科書内容対照表</a>／<a href="https://www.shinko-keirin.co.jp/keirinkan/chu/gakusyusien/nenkankeikaku/pdf/JH_sugaku1.pdf">啓林館 年間指導計画</a>。p.260〜263・p.276〜283 が「力をつけよう」のどの章に対応するかは、開いて付箋を立てて確認しておくと確実です。</div>
+
+    <h3>直前ポイント</h3>
+    <ul class="li">
+      <li>①関数の意味（2つの数量の関係が関数かどうか判断できる）②比例・反比例の式・グラフ・変化の特徴 ③グラフをかく／グラフから式を読む ④式やグラフを利用して問題を解く。</li>
+      <li>⑤平面図形の用語の意味と記号の表し方 ⑥図形の移動の説明 ⑦条件に合う作図 ⑧点・直線の位置関係 ⑨線の長さ・角の大きさ・面積を求める ⑩図形の性質や見方を使って問題を解く。</li>
+      <li><span class="pill dan">注意</span>比例・反比例は<b>小学校の解き方で解くと評価されない場合がある</b>。必ず式とグラフで解く。</li>
+      <li><span class="pill dan">注意</span>作図は<b>コンパスと定規</b>が必要。答案用紙を破らないよう、<b>机の上で作図する練習</b>をしておく。</li>
+      <li>教科書を隅々まで読み返し、章末問題・小テスト・STEP演習で反復練習する。</li>
+    </ul>
+    <div class="adv"><b>先生からのアドバイス</b>
+ポイントは、次の通りです。①関数の意味を理解し、2つの数量の関係が関数であるか判断できる。②比例・反比例の式、グラフ、変化の特徴を理解している。③比例・反比例のグラフをかいたり、グラフから式を読み取ったりすることができる。④比例・反比例の式やグラフを利用して、いろいろな問題を解決することができる。⑤平面図形に関する用語の意味、記号の表し方を理解している。⑥図形の移動について説明することができる。⑦条件に合う図形を作図することができる。⑧平面における、点・直線の位置関係について理解している。⑨平面図形について、線の長さ・角の大きさ・面積などを求めることができる。⑩図形の性質や見方・考え方を利用して、いろいろな問題を解決することができる。
+（注）比例・反比例の問題では小学校の解き方で解いても評価しない場合があります。また、作図の問題ではコンパスと定規が必要です。作図で答案用紙が破れないように、机の上で作図する練習をしておきましょう。教科書を隅々まで読み返し、章末問題や小テスト、STEP演習で反復練習をしましょう。</div>
+  </div>
+
+  <h2 class="sec">自己チェック</h2>
+  <ul class="chk" data-list="sugaku">
+    <li><input type="checkbox" id="g1"><label for="g1">比例の式 y=ax と反比例の式 y=a/x を、aの求め方込みで言える</label></li>
+    <li><input type="checkbox" id="g2"><label for="g2">比例・反比例のグラフを、表から書けた</label></li>
+    <li><input type="checkbox" id="g3"><label for="g3">グラフから式を読み取れた</label></li>
+    <li><input type="checkbox" id="g4"><label for="g4">おうぎ形の弧の長さと面積を求められた</label></li>
+    <li><input type="checkbox" id="g5"><label for="g5">垂線・角の二等分線・垂直二等分線の作図手順を、手が動く状態で言える</label></li>
+    <li><input type="checkbox" id="g6"><label for="g6">章末問題（4章 p.133〜134・5章 p.164〜165）を1周した</label></li>
+    <li><input type="checkbox" id="g7"><label for="g7">巻末「力をつけよう」（P260〜263・P276〜283）に着手した</label></li>
+    <li><input type="checkbox" id="g8"><label for="g8">コンパスと定規を筆箱に入れた</label></li>
+  </ul>
+
+  <h2 class="sec">確認クイズ</h2>
+  <details><summary>Q1. 比例と反比例の式・グラフの違いを説明できる？</summary><div class="ans">比例は y=ax（原点を通る直線、xが2倍3倍→yも2倍3倍）。反比例は y=a/x（原点を通らない双曲線、xが2倍→yは1/2倍）。比例定数 a は「y=ax に1組の座標を代入」で求める。</div></details>
+  <details><summary>Q2. おうぎ形の弧の長さと面積の公式は？（中心角を a°、半径 r）</summary><div class="ans">弧の長さ ℓ = 2πr × a/360　面積 S = πr² × a/360。どちらも「円全体の何割か」で考える。</div></details>
+  <details><summary>Q3. 角の二等分線の作図手順を3ステップで言える？</summary><div class="ans">①角の頂点を中心に円弧をかき、2辺との交点をとる ②その2点をそれぞれ中心に、等しい半径で円弧をかき交わらせる ③頂点と交点を結ぶ。作図の根拠が「2辺からの距離が等しい」ことまで言えると記述問題に対応できる。</div></details>
+  <details><summary>Q4. 図形の移動（平行移動・回転移動・対称移動）の違いは？</summary><div class="ans">平行移動＝向きを変えずに移動。回転移動＝ある点を中心に回す（180°回すと点対称移動）。対称移動＝ある直線を折り目として折り返す。それぞれ「対応する点を結ぶ線分」の性質で見分ける。</div></details>
+</section>
+
+<!-- ============ 理科 ============ -->
+<section class="panel" id="p-rika">
+  <div class="card">
+    <h3 style="margin:0 0 6px">考査範囲</h3>
+    <div class="blk"><b>教科書</b><ul class="li"><li>P48〜87</li></ul></div>
+    <div class="blk"><b>問題集＝「中学実力練成テキスト」</b>（ご指摘により訂正）<ul class="li">
+      <li>P50〜57、P59、P64〜72</li>
+      <li>P74の1と2</li>
+      <li>P80 集中トレーニング2〜20</li>
+      <li>P80 計算トレーニング1〜5</li>
+      <li>P81 記述トレーニング2、3</li>
+    </ul></div>
+    <div class="blk"><b>その他</b><ul class="li">
+      <li><span class="pill warn">課題として提出するのは P59以降</span></li>
+      <li>該当範囲の問題を<b>問題集用ノート</b>に解き、理科の考査当日<b>放課後まで</b>に提出。担当者の指示に従う。</li>
+    </ul></div>
+
+    <h3>単元（確認済み）</h3>
+    <div class="note"><b>物質の性質</b>／<b>密度</b>／<b>濃度・溶解度</b>（水溶液）／<b>気体の性質</b>／<b>状態変化</b>　※「1学期期末考査や実力考査でも出題した部分は解き直し」が指定されています。</div>
+
+    <h3>直前ポイント</h3>
+    <ul class="li">
+      <li>密度は <b>密度＝質量÷体積</b>、濃度は <b>質量パーセント濃度＝溶質÷溶液×100</b>。「何を求めるか」を先に書いてから計算する。</li>
+      <li>溶解度は<b>溶解度曲線の読み取りと再結晶</b>まで。難しい単元なので、落ち着いて「何が問われているか」を確認する。</li>
+      <li>気体は<b>色・におい・水への溶けやすさ・集め方</b>を表1枚にまとめる。</li>
+      <li>状態変化は<b>粒子モデル</b>で。「体積は変わるが、質量は変わらない」を説明できるように。</li>
+      <li>1学期期末・実力考査の出題部分の<b>解き直し</b>を最優先。苦手分野を中心に繰り返す。</li>
+    </ul>
+    <div class="adv"><b>先生からのアドバイス</b>
+今回の試験範囲は「物質の分類」「密度」「濃度、溶解度」「気体の性質」「状態変化」です。1学期期末考査や実力考査でも出題した部分は、解き直しをしっかりとしておきましょう。密度と濃度については、小テストの問題を練習して計算の方法を確認してください。溶解度の問題は難しいですが、問題集を解く際に、「何が問われているか」を落ち着いて考えるように気をつけましょう。気体や状態変化については、問題集の範囲をしっかりと解いて基本を押さえておいてください。早めに問題集に取り組み、自分の苦手な分野を中心に繰り返し解き直してください。</div>
+  </div>
+
+  <h2 class="sec">自己チェック</h2>
+  <ul class="chk" data-list="rika">
+    <li><input type="checkbox" id="r1"><label for="r1">密度の計算（質量・体積から求める／密度から質量を求める）ができた</label></li>
+    <li><input type="checkbox" id="r2"><label for="r2">質量パーセント濃度を、溶質・溶媒・溶液の区別から求められた</label></li>
+    <li><input type="checkbox" id="r3"><label for="r3">溶解度曲線を読んで、とける量と再結晶を判断できた</label></li>
+    <li><input type="checkbox" id="r4"><label for="r4">気体の性質表（色・におい・水への溶けやすさ・集め方）を白紙に書けた</label></li>
+    <li><input type="checkbox" id="r5"><label for="r5">状態変化で「体積は変わるが質量は変わらない」を粒子モデルで説明できる</label></li>
+    <li><input type="checkbox" id="r6"><label for="r6">1学期期末・実力考査で出た問題の解き直しをした</label></li>
+    <li><input type="checkbox" id="r7"><label for="r7">集中トレーニング2〜20・計算トレーニング1〜5・記述トレーニング2,3を終えた</label></li>
+    <li><input type="checkbox" id="r8"><label for="r8">問題集用ノートをP59以降まで仕上げた（9/30放課後提出）</label></li>
+  </ul>
+
+  <h2 class="sec">確認クイズ</h2>
+  <details><summary>Q1. 密度の式と、計算のときの注意は？</summary><div class="ans">密度〔g/cm³〕＝質量〔g〕÷体積〔cm³〕。体積は「たて×横×高さ」やメスシリンダーの目盛りの差で求める。単位をそろえるのが最大の落とし穴。</div></details>
+  <details><summary>Q2. 水180gに砂糖20gをとかしたときの質量パーセント濃度は？</summary><div class="ans">溶液＝180＋20＝200g。20÷200×100＝<b>10%</b>。「溶質÷溶液」であり「溶質÷溶媒」ではない点に注意。</div></details>
+  <details><summary>Q3. 状態変化で質量と体積はどうなる？</summary><div class="ans">粒子の数は変わらないので<b>質量は変わらない</b>。粒子の間隔が変わるので<b>体積は変わる</b>（水→氷は例外的に体積が増える）。</div></details>
+  <details><summary>Q4. 酸素と二酸化炭素の性質と集め方は？</summary><div class="ans">酸素＝無色無臭・水に溶けにくい・空気よりやや重い→水上置換法（または下方置換法）。二酸化炭素＝無色無臭・水に少し溶ける・空気より重い→下方置換法。石灰水を白く濁らせるのは二酸化炭素。</div></details>
+</section>
+
+<!-- ============ 英語 ============ -->
+<section class="panel" id="p-eigo">
+  <div class="card">
+    <h3 style="margin:0 0 6px">考査範囲</h3>
+    <div class="blk"><b>教科書</b><ul class="li"><li>Lesson 5〜Lesson 7（p.69〜p.104）</li></ul></div>
+    <div class="blk"><b>文法問題集</b><ul class="li"><li>Lesson 5〜Lesson 7 と まとめの問題③（P.64〜P.105）</li></ul></div>
+    <div class="blk"><b>単語帳</b><ul class="li"><li>Lesson 5〜Lesson 7（p.139〜p.184）<span class="pill">正式名称は要確認</span></li></ul></div>
+    <div class="blk"><b>その他</b><ul class="li"><li>授業中に取り扱ったプリント／担当者の指示に従う</li></ul></div>
+
+    <h3>文法の核（3つ）</h3>
+    <table class="sche">
+      <tr><th>項目</th><th>押さえどころ</th></tr>
+      <tr><td><b>命令文</b></td><td>Please〜／Don't〜／Let's〜／be動詞の命令文（Be quiet. など）。Pleaseの位置。</td></tr>
+      <tr><td><b>canを用いた文</b></td><td>助動詞canの後ろは<b>動詞の原形</b>。can／cannot・can't／Can you 〜? の答え方。</td></tr>
+      <tr><td><b>現在進行形</b></td><td>be動詞＋〜ing。「今している最中」。疑問文・否定文の作り方。</td></tr>
+    </table>
+    <div class="note">あわせて<b>道案内の決まった表現</b>を覚えること（Go straight.／Turn right at the second corner.／It's on your left. など）。文法の並びは Z会「NEW TREASURE」のシラバス（命令文／canを用いた文 → 現在進行形）と一致しています <a href="https://www.zkai.co.jp/wp-content/uploads/sites/21/2021/08/04104927/21newtreasure.pdf">Z会 NEW TREASURE 文法シラバス</a>。</div>
+
+    <h3>直前ポイント</h3>
+    <ul class="li">
+      <li>「それぞれの英文が<b>どのような形</b>になっているか」を正確に押さえる。</li>
+      <li>単語帳 p.139〜184 を1周し、スペルまで書けるか確認する。</li>
+      <li>文法問題集を繰り返し解き、間違えた問題に印をつけて2周目を回す。</li>
+    </ul>
+    <div class="adv"><b>先生からのアドバイス</b>
+試験範囲はLesson 5からLesson 7までです。今回は命令文、助動詞canや現在進行形が範囲です。それぞれの英文がどのような形になっているかを正確に押さえましょう。また、道案内の決まった表現を覚えましょう。文法問題集や演習プリントを活用し、繰り返し練習することが大切です。</div>
+  </div>
+
+  <h2 class="sec">自己チェック</h2>
+  <ul class="chk" data-list="eigo">
+    <li><input type="checkbox" id="e1"><label for="e1">命令文（Please〜／Don't〜／Let's〜／Be〜.）を4種類とも英作文できた</label></li>
+    <li><input type="checkbox" id="e2"><label for="e2">canの後ろが動詞の原形になることを、理由込みで言える</label></li>
+    <li><input type="checkbox" id="e3"><label for="e3">現在進行形の肯定・否定・疑問文を、be動詞の変化込みで書けた</label></li>
+    <li><input type="checkbox" id="e4"><label for="e4">道案内の決まった表現を10個言える</label></li>
+    <li><input type="checkbox" id="e5"><label for="e5">単語帳 p.139〜184 を1周した（書けるか確認）</label></li>
+    <li><input type="checkbox" id="e6"><label for="e6">文法問題集 Lesson5〜7＋まとめの問題③ を1周した</label></li>
+    <li><input type="checkbox" id="e7"><label for="e7">授業プリントを1枚ずつ見直した</label></li>
+  </ul>
+
+  <h2 class="sec">確認クイズ</h2>
+  <details><summary>Q1. 「ここで右に曲がってください」を英語で？</summary><div class="ans">Turn right here.（命令文なので主語はなく、動詞の原形で始める。ていねいにするなら Please turn right here.）</div></details>
+  <details><summary>Q2. 「彼は今、英語を勉強しています」を英語で？</summary><div class="ans">He is studying English now.／He's studying English now.（現在進行形＝be＋〜ing）</div></details>
+  <details><summary>Q3. 「私はピアノを弾くことができます」と、その否定・疑問文は？</summary><div class="ans">I can play the piano.／I can't play the piano.／Can you play the piano?　※canの後ろは必ず原形。</div></details>
+  <details><summary>Q4. 「図書館はあなたの左手にあります」を英語で？</summary><div class="ans">The library is on your left.（道案内の定型表現。on your right／next to 〜 もセットで覚える。）</div></details>
+</section>
+
+<!-- ============ 提出物 ============ -->
+<section class="panel" id="p-teishutsu">
+  <div class="card">
+    <h3 style="margin:0 0 8px">提出物の締切</h3>
+    <table class="sche">
+      <tr><th>提出物</th><th>締切</th><th>状態</th></tr>
+      <tr><td>社会 問題集</td><td><b>9/29(火) 考査当日</b></td><td><span class="pill dan">当日提出</span></td></tr>
+      <tr><td>理科 問題集ノート（P59以降）</td><td><b>9/30(水) 放課後まで</b></td><td><span class="pill warn">放課後提出</span></td></tr>
+      <tr><td>数学 STEP演習</td><td>担当の先生の指示に従う</td><td><span class="pill">要確認</span></td></tr>
+    </table>
+    <div class="note">未提出課題がある人は、考査終了後に取り組みます。<b>昼食を用意</b>しておきましょう。</div>
+  </div>
+
+  <div class="grid2" style="margin-top:12px">
+    <div class="card">
+      <b>持ち物チェック</b>
+      <ul class="chk" data-list="mochimono">
+        <li><input type="checkbox" id="m1"><label for="m1">コンパス（数学・作図）</label></li>
+        <li><input type="checkbox" id="m2"><label for="m2">定規（数学・作図）</label></li>
+        <li><input type="checkbox" id="m3"><label for="m3">社会の問題集（9/29提出）</label></li>
+        <li><input type="checkbox" id="m4"><label for="m4">理科の問題集ノート（9/30提出）</label></li>
+        <li><input type="checkbox" id="m5"><label for="m5">筆記用具予備・消しゴム</label></li>
+        <li><input type="checkbox" id="m6"><label for="m6">必要なら昼食（未提出課題がある場合）</label></li>
+      </ul>
+    </div>
+    <div class="card">
+      <b>要確認リスト（不明な点）</b>
+      <ul class="li">
+        <li>単語帳の正式名称（NEW TREASURE準拠かどうか）</li>
+        <li>数学 STEP演習の<b>提出期限</b></li>
+        <li>LHR（9/30③）の内容</li>
+        <li>理科 問題集の問題番号と単元の対応（P50〜57・59・64〜72・74の内容）</li>
+      </ul>
+      <div class="note">対策の骨格は変わりませんが、教科書と連絡帳で確認しておくと安心です。</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  出典：学校配布の「2学期中間考査範囲」プリント（時間割・考査範囲・各教科の先生からのアドバイス）<br>
+  数学の章構成の参考：<a href="https://www.shinko-keirin.co.jp/keirinkan/chu/gakusyusien/nenkankeikaku/pdf/JH_sugaku1.pdf">啓林館 年間指導計画参考資料</a>／<a href="https://service.obunsha.co.jp/tokuten/chuteite/pdf/teikitest_1m.pdf">教科書内容対照表</a><br>
+  英語の文法事項の参考：<a href="https://www.zkai.co.jp/wp-content/uploads/sites/21/2021/08/04104927/21newtreasure.pdf">Z会 NEW TREASURE 文法シラバス</a><br>
+  チェック状態はこの端末のブラウザに保存されます。
+</footer>
+</div>
+
+<script>
+/* ---------- tabs ---------- */
+document.querySelectorAll('.tab').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-selected','false')});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('on')});
+    b.setAttribute('aria-selected','true');
+    document.getElementById('p-'+b.dataset.t).classList.add('on');
+  });
+});
+
+/* ---------- countdown (JST) ---------- */
+function pad(n){return String(n).padStart(2,'0')}
+function tick(){
+  var now=Date.now();
+  var t1=new Date('2026-09-29T08:40:00+09:00').getTime();
+  var t2=new Date('2026-09-30T08:40:00+09:00').getTime();
+  [['cd1',t1],['cd2',t2]].forEach(function(p){
+    var el=document.getElementById(p[0]);
+    var d=p[1]-now;
+    if(d<=0){el.innerHTML='試験中／終了';return}
+    var h=Math.floor(d/3600000), m=Math.floor(d%3600000/60000), s=Math.floor(d%60000/1000);
+    var day=Math.floor(h/24);
+    el.innerHTML=(day>0? day+'<small>日</small> ':'')+pad(h%24)+'<small>時間</small> '+pad(m)+'<small>分</small> '+pad(s)+'<small>秒</small>';
+  });
+}
+tick(); setInterval(tick,1000);
+
+/* ---------- checklist with localStorage ---------- */
+var KEY='midterm-check-v1';
+var saved={};
+try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){saved={}}
+document.querySelectorAll('.chk').forEach(function(list){
+  var boxes=list.querySelectorAll('input[type=checkbox]');
+  var barwrap=document.createElement('div');
+  barwrap.className='bar';
+  var prog=document.createElement('div'); prog.className='prog'; var fill=document.createElement('i'); prog.appendChild(fill);
+  var txt=document.createElement('span');
+  var reset=document.createElement('button'); reset.className='btn'; reset.type='button'; reset.textContent='リセット';
+  barwrap.appendChild(prog); barwrap.appendChild(txt); barwrap.appendChild(reset);
+  list.parentNode.insertBefore(barwrap,list.nextSibling);
+
+  function id(box){return list.dataset.list+':'+box.id}
+  function refresh(){
+    var n=0; boxes.forEach(function(b){ if(b.checked){b.parentNode.classList.add('done'); n++} else {b.parentNode.classList.remove('done')} });
+    var pc=boxes.length? Math.round(n/boxes.length*100):0;
+    fill.style.width=pc+'%'; txt.textContent=n+' / '+boxes.length+'（'+pc+'%）';
+  }
+  boxes.forEach(function(b){
+    if(saved[id(b)]) b.checked=true;
+    b.addEventListener('change',function(){ saved[id(b)]=b.checked; try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){} refresh(); });
+  });
+  reset.addEventListener('click',function(){
+    boxes.forEach(function(b){ b.checked=false; delete saved[id(b)] });
+    try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}
+    refresh();
+  });
+  refresh();
+});
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

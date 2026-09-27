@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習プリント集｜中1 2学期中間考査 対策ファイル</title>
+<script>document.documentElement.className += ' js';</script>
+<style>
+:root{
+  --ink:#0b0d12;--ink2:#4b5565;--ink3:#8a93a3;--bg:#fbfbfd;--card:#fff;--line:#e3e6ee;--soft:#f4f6fb;
+  --brand:#2f5fd0;--brand2:#6f8ff5;--accent:#0aa2c0;--r:18px;--shadow:0 8px 30px rgba(20,30,70,.08);
+}
+@media (prefers-color-scheme:dark){
+  :root{--ink:#f2f5fb;--ink2:#b6c0d0;--ink3:#8590a3;--bg:#0c0f14;--card:#151a22;--line:#252c38;--soft:#1a212b;--brand:#87a8ff;--brand2:#5b7de0;--accent:#4fd1e3;--shadow:0 8px 30px rgba(0,0,0,.4)}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px}
+
+nav{position:sticky;top:0;z-index:30;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+nav .in{max-width:1040px;margin:0 auto;padding:11px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+nav .brand{font-weight:700;font-size:14.5px;letter-spacing:.01em}
+nav a{color:var(--ink2);text-decoration:none;font-size:13.5px;font-weight:600;padding:5px 10px;border-radius:999px;transition:.25s}
+nav a:hover{background:var(--soft);color:var(--ink)}
+
+header.hero{padding:76px 0 40px;text-align:center}
+header.hero .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--brand);text-transform:uppercase}
+header.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.1;margin:12px 0 0;letter-spacing:-.02em;font-weight:800;
+  background:linear-gradient(100deg,var(--brand),var(--brand2) 45%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:heroUp .9s cubic-bezier(.16,1,.3,1) both}
+header.hero p{margin:16px auto 0;max-width:620px;color:var(--ink2);font-size:clamp(15px,2vw,18px);
+  animation:heroUp 1s .08s cubic-bezier(.16,1,.3,1) both}
+header.hero .chips{margin-top:22px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap;
+  animation:heroUp 1.1s .16s cubic-bezier(.16,1,.3,1) both}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:13px;color:var(--ink2);box-shadow:var(--shadow)}
+.chip b{color:var(--ink)}
+@keyframes heroUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+.filters{position:sticky;top:52px;z-index:20;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:14px 0;
+  background:linear-gradient(180deg,var(--bg) 65%,transparent)}
+.f{border:1px solid var(--line);background:var(--card);color:var(--ink2);border-radius:999px;padding:8px 17px;font-size:13.5px;font-weight:600;cursor:pointer;transition:.25s}
+.f:hover{transform:translateY(-1px)}
+.f[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+h2.sec{font-size:clamp(20px,3vw,27px);margin:56px 0 6px;letter-spacing:-.01em;font-weight:750}
+h2.sec + p.sub{margin:0 0 18px;color:var(--ink2);font-size:14.5px}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:720px}
+th,td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+th{background:var(--soft);font-size:12.5px;color:var(--ink2);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tbody tr{transition:background .2s}
+tbody tr:hover{background:var(--soft)}
+.subj{font-weight:700;white-space:nowrap}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px;background:var(--soft);color:var(--ink2);margin:2px 4px 2px 0}
+.dl{display:inline-block;text-decoration:none;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:9px;border:1px solid var(--line);color:var(--ink);background:var(--card);transition:.22s;white-space:nowrap}
+.dl:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.dl.p{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-color:transparent}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(20,30,70,.14)}
+.card h3{margin:0 0 2px;font-size:17px;letter-spacing:-.01em}
+.card .meta{font-size:12.5px;color:var(--ink3);margin-bottom:10px}
+.card ul{margin:0 0 14px;padding-left:0;list-style:none}
+.card ul li{font-size:13.5px;color:var(--ink2);padding:5px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:10px}
+.card ul li:last-child{border-bottom:none}
+.card ul li span{color:var(--ink3);font-size:12.5px;white-space:nowrap}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+
+.box{background:var(--soft);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;font-size:14px;color:var(--ink2)}
+.box b{color:var(--ink)}
+pre{background:var(--ink);color:var(--bg);border-radius:12px;padding:14px 16px;overflow:auto;font-size:12.5px;line-height:1.7}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+/* JSが有効なときだけ初期状態を隠す（無効時・印刷時は常に表示） */
+html.js .reveal{opacity:0;transform:translateY(26px)}
+.reveal.in{opacity:1;transform:none;transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+@media print{.reveal{opacity:1!important;transform:none!important}}
+.hide{display:none!important}
+
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink3);line-height:1.9}
+footer a{color:var(--brand)}
+@media (max-width:640px){header.hero{padding:48px 0 26px}.filters{top:46px}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="in">
+  <span class="brand">中1 中間考査 対策</span>
+  <a href="index.html">対策サイト</a>
+  <a href="#list">ファイル一覧</a>
+  <a href="#units">単元別</a>
+  <a href="#how">使い方</a>
+  <a href="#gh">GitHub公開</a>
+</div></nav>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Practice Prints</div>
+  <h1>練習プリント集</h1>
+  <p>9/29(火)・9/30(水)の2学期中間考査向けに、5教科ぶんの練習プリントを用意しました。すべて解答・解説つきで、印刷してそのまま使えます。</p>
+  <div class="chips">
+    <span class="chip"><b>5</b> 教科</span>
+    <span class="chip"><b>5</b> ファイル</span>
+    <span class="chip">全問 <b>解答つき</b></span>
+    <span class="chip">HTML &amp; <b>PDF</b></span>
+    <span class="chip">印刷 / PDF保存対応</span>
+  </div>
+</header>
+
+<div class="filters" role="group" aria-label="教科で絞り込む">
+  <button class="f" data-s="all" aria-pressed="true">すべて</button>
+  <button class="f" data-s="kokugo" aria-pressed="false">国語</button>
+  <button class="f" data-s="shakai" aria-pressed="false">社会</button>
+  <button class="f" data-s="sugaku" aria-pressed="false">数学</button>
+  <button class="f" data-s="rika" aria-pressed="false">理科</button>
+  <button class="f" data-s="eigo" aria-pressed="false">英語</button>
+</div>
+
+<h2 class="sec reveal" id="list">ファイル一覧</h2>
+<p class="sub reveal">教科ごとに1ファイル。PDFはそのまま印刷でき、HTMLはブラウザで開いて「印刷 / PDF保存」ボタンからも出力できます。</p>
+<div class="tablewrap reveal">
+<table>
+<thead><tr><th>教科</th><th>単元・収録内容</th><th>ボリューム</th><th>プリント</th><th>PDF</th></tr></thead>
+<tbody>
+<tr data-s="kokugo">
+  <td class="subj">国語</td>
+  <td><span class="tag">百人一首⑪〜⑳</span><span class="tag">動詞の活用</span><span class="tag">竹取物語</span><span class="tag">月夜の浜辺</span><span class="tag">獣の奏者</span><span class="tag">漢字</span></td>
+  <td>設問54問＋活用表30欄</td>
+  <td><a class="dl" href="prints/kokugo.html">HTMLを開く</a></td>
+  <td><a class="dl p" href="#PDF_KOKUGO">PDF</a></td>
+</tr>
+<tr data-s="shakai">
+  <td class="subj">社会</td>
+  <td><span class="tag">穴埋め</span><span class="tag">人物</span><span class="tag">年代順</span><span class="tag">記述</span></td>
+  <td>設問40問</td>
+  <td><a class="dl" href="prints/shakai.html">HTMLを開く</a></td>
+  <td><a class="dl p" href="#PDF_SHAKAI">PDF</a></td>
+</tr>
+<tr data-s="sugaku">
+  <td class="subj">数学</td>
+  <td><span class="tag">比例・反比例</span><span class="tag">変域</span><span class="tag">グラフから式</span><span class="tag">おうぎ形</span><span class="tag">作図</span></td>
+  <td>設問36問</td>
+  <td><a class="dl" href="prints/sugaku.html">HTMLを開く</a></td>
+  <td><a class="dl p" href="#PDF_SUGAKU">PDF</a></td>
+</tr>
+<tr data-s="rika">
+  <td class="subj">理科</td>
+  <td><span class="tag">密度</span><span class="tag">濃度</span><span class="tag">溶解度</span><span class="tag">気体の性質</span><span class="tag">状態変化</span></td>
+  <td>設問40問</td>
+  <td><a class="dl" href="prints/rika.html">HTMLを開く</a></td>
+  <td><a class="dl p" href="#PDF_RIKA">PDF</a></td>
+</tr>
+<tr data-s="eigo">
+  <td class="subj">英語</td>
+  <td><span class="tag">命令文</span><span class="tag">can</span><span class="tag">現在進行形</span><span class="tag">道案内</span><span class="tag">単語</span></td>
+  <td>設問46問</td>
+  <td><a class="dl" href="prints/eigo.html">HTMLを開く</a></td>
+  <td><a class="dl p" href="#PDF_EIGO">PDF</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="box reveal" style="margin-top:12px">
+  国語・英語の見出しに書いた問数は目安です。実際の設問数は上の表と下の内訳のとおりです。
+</div>
+
+<h2 class="sec reveal" id="units">単元別の内訳</h2>
+<p class="sub reveal">「今日はここだけ」と決めて1単元ずつ潰していくのがおすすめです。</p>
+<div class="cards">
+  <div class="card reveal" data-s="kokugo">
+    <h3>国語</h3>
+    <div class="meta">設問54問＋活用表30欄 ・ 目安40分</div>
+    <ul>
+      <li>百人一首⑪〜⑳（下の句・歌人）<span>10問</span></li>
+      <li>語句の意味・現代かなづかい<span>4問</span></li>
+      <li>動詞の活用表・活用の種類<span>30欄＋3問</span></li>
+      <li>竹取物語の古語<span>8問</span></li>
+      <li>月夜の浜辺（表現技法・心情）<span>4問</span></li>
+      <li>獣の奏者（全巻の内容）<span>9問</span></li>
+      <li>漢字（書き・読み）<span>16問</span></li>
+    </ul>
+    <div class="acts"><a class="dl" href="prints/kokugo.html">HTMLを開く</a><a class="dl p" href="#PDF_KOKUGO">PDFをダウンロード</a></div>
+  </div>
+
+  <div class="card reveal" data-s="shakai">
+    <h3>社会</h3>
+    <div class="meta">設問40問 ・ 目安40分</div>
+    <ul>
+      <li>穴埋め（鎌倉〜室町）<span>15問</span></li>
+      <li>人物<span>10問</span></li>
+      <li>年代順の並べ替え<span>6問</span></li>
+      <li>記述（なぜ・その後まで）<span>9問</span></li>
+    </ul>
+    <div class="acts"><a class="dl" href="prints/shakai.html">HTMLを開く</a><a class="dl p" href="#PDF_SHAKAI">PDFをダウンロード</a></div>
+  </div>
+
+  <div class="card reveal" data-s="sugaku">
+    <h3>数学</h3>
+    <div class="meta">設問36問 ・ 目安45分</div>
+    <ul>
+      <li>比例定数と式<span>6問</span></li>
+      <li>変域<span>4問</span></li>
+      <li>グラフから式を読む<span>4問</span></li>
+      <li>おうぎ形（弧・面積）<span>6問</span></li>
+      <li>変化の割合<span>3問</span></li>
+      <li>関数かどうかの判断<span>3問</span></li>
+      <li>作図（記入欄つき）<span>6問</span></li>
+      <li>説明する問題<span>4問</span></li>
+    </ul>
+    <div class="acts"><a class="dl" href="prints/sugaku.html">HTMLを開く</a><a class="dl p" href="#PDF_SUGAKU">PDFをダウンロード</a></div>
+  </div>
+
+  <div class="card reveal" data-s="rika">
+    <h3>理科</h3>
+    <div class="meta">設問40問 ・ 目安45分</div>
+    <ul>
+      <li>密度の計算<span>6問</span></li>
+      <li>質量パーセント濃度<span>6問</span></li>
+      <li>溶解度・再結晶<span>4問</span></li>
+      <li>気体の性質（表＋4問）<span>8問</span></li>
+      <li>状態変化<span>8問</span></li>
+      <li>説明する問題<span>8問</span></li>
+    </ul>
+    <div class="acts"><a class="dl" href="prints/rika.html">HTMLを開く</a><a class="dl p" href="#PDF_RIKA">PDFをダウンロード</a></div>
+  </div>
+
+  <div class="card reveal" data-s="eigo">
+    <h3>英語</h3>
+    <div class="meta">設問46問 ・ 目安40分</div>
+    <ul>
+      <li>〜ing形の作り方<span>10問</span></li>
+      <li>命令文<span>6問</span></li>
+      <li>can<span>8問</span></li>
+      <li>現在進行形<span>8問</span></li>
+      <li>道案内の表現<span>6問</span></li>
+      <li>単語<span>8問</span></li>
+    </ul>
+    <div class="acts"><a class="dl" href="prints/eigo.html">HTMLを開く</a><a class="dl p" href="#PDF_EIGO">PDFをダウンロード</a></div>
+  </div>
+
+  <div class="card reveal" data-s="all">
+    <h3>まとめてダウンロード</h3>
+    <div class="meta">サイト一式（ZIP / 対策サイト・プリント・README）</div>
+    <ul>
+      <li>index.html（対策サイト）<span>同梱</span></li>
+      <li>files.html（このページ）<span>同梱</span></li>
+      <li>prints/ 5ファイル<span>同梱</span></li>
+      <li>README.md（公開手順）<span>同梱</span></li>
+    </ul>
+    <div class="acts"><a class="dl p" href="#ZIP">ZIPをダウンロード</a></div>
+  </div>
+</div>
+
+<h2 class="sec reveal" id="how">使い方</h2>
+<div class="box reveal">
+  <p style="margin:0 0 10px"><b>1. 印刷して紙で解く</b>　各プリント右上の「印刷 / PDF保存」ボタンを押すと、問題用紙だけが印刷されます（解答は印刷されません）。</p>
+  <p style="margin:0 0 10px"><b>2. 解答も印刷したいとき</b>　同じく「印刷に解答・解説を含める」にチェックを入れると、解答・解説が別ページとして印刷されます。丸つけ用に。</p>
+  <p style="margin:0 0 10px"><b>3. 端末で解くとき</b>　「答えを開く」形式のクイズは、対策サイト側で確認できます。</p>
+  <p style="margin:0"><b>4. 直前に見直す</b>　対策サイトの「自己チェック」と、このページの単元一覧を見比べて、抜けている単元だけ解き直しましょう。</p>
+</div>
+
+<h2 class="sec reveal" id="gh">GitHubで公開する手順</h2>
+<p class="sub reveal">この一式は静的ファイルだけなので、GitHub Pages にそのまま置けます（ビルド不要）。</p>
+<div class="box reveal">
+<pre><code># 1) 展開したフォルダで
+cd ch1-midterm-site
+git init
+git add .
+git commit -m "Add midterm study site"
+git branch -M main
+
+# 2) 自分のリポジトリを作って push
+git remote add origin https://github.com/&lt;ユーザー名&gt;/&lt;リポジトリ名&gt;.git
+git push -u origin main</code></pre>
+<p style="margin:10px 0 0">3) GitHub のリポジトリ → <b>Settings → Pages</b> → Source を「Deploy from a branch」、Branch を <code>main</code> / <code>/ (root)</code> に設定。<br>
+数分後 <code>https://&lt;ユーザー名&gt;.github.io/&lt;リポジトリ名&gt;/</code> で公開されます。相対リンク（<code>prints/…</code>）もそのまま動きます。</p>
+</div>
+
+<footer>
+  出典：学校配布の「2学期中間考査範囲」プリント（時間割・考査範囲・各教科の先生からのアドバイス）<br>
+  プリントの問題は、範囲表の単元と先生のアドバイスに沿って作成したオリジナル問題です（教科書・問題集の問題文の転載はありません）。<br>
+  百人一首⑪〜⑳の本文は <a href="https://www.douwa-douyou.jp/contents/html/hyakunin/hyakunin1120.shtml">百人一首 11番歌～20番歌 一覧</a>、『獣の奏者』の人物・用語は <a href="https://ja.wikipedia.org/wiki/%E7%8D%A3%E3%81%AE%E5%A5%8F%E8%80%85">Wikipedia「獣の奏者」</a>、『月夜の浜辺』本文は <a href="https://ja.wikisource.org/wiki/%E6%9C%88%E5%A4%9C%E3%81%AE%E6%B5%9C%E8%BE%BA">ウィキソース</a> を参照しました。
+</footer>
+</div>
+
+<script>
+/* ---- filter with View Transitions ---- */
+var cards=document.querySelectorAll('[data-s]');
+var rows=document.querySelectorAll('tbody tr');
+var cur='all';
+document.querySelectorAll('.f').forEach(function(b){
+  b.addEventListener('click',function(){
+    var s=b.dataset.s;
+    function apply(){
+      cur=s;
+      document.querySelectorAll('.f').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.s===s))});
+      cards.forEach(function(c){ if(c.classList.contains('card')||c.classList.contains('tablewrap')) return;
+        c.classList.toggle('hide', !(s==='all'||c.dataset.s===s||c.dataset.s==='all'));
+      });
+      rows.forEach(function(r){ r.classList.toggle('hide', !(s==='all'||r.dataset.s===s)) });
+      document.querySelectorAll('.cards .card[data-s]').forEach(function(c){
+        c.classList.toggle('hide', !(s==='all'||c.dataset.s===s||c.dataset.s==='all'));
+      });
+    }
+    if(document.startViewTransition){ document.startViewTransition(apply) } else { apply() }
+  });
+});
+
+/* ---- スクロールで現れる（IntersectionObserver＋保険のタイマー） ---- */
+(function(){
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  function showAll(){ els.forEach(function(e){ e.classList.add('in') }) }
+  if(rm || !('IntersectionObserver' in window)){ showAll(); return }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target) } });
+  },{rootMargin:'0px 0px -10% 0px',threshold:.08});
+  els.forEach(function(e){ io.observe(e) });
+  setTimeout(showAll,2500);
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
