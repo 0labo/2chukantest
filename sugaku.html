@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>数学 練習プリント｜中1 2学期中間考査対策</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#eef1f6;color:#141821;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;font-size:14.5px;line-height:1.75}
+.bar{position:sticky;top:0;z-index:9;display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 16px;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid #d6dbe6}
+.bar a{color:#2f5fd0;text-decoration:none;font-size:13px;font-weight:600}
+.bar label{font-size:12.5px;color:#5a6478;margin-left:auto}
+.bar button{border:0;background:#2f5fd0;color:#fff;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer}
+main{max-width:830px;margin:18px auto 60px;background:#fff;padding:28px 32px 44px;border-radius:16px;box-shadow:0 2px 16px rgba(20,30,60,.09)}
+.hd h1{margin:0 0 6px;font-size:21px}
+.hd p{margin:0;font-size:12.5px;color:#5a6478}
+.nm{margin-top:12px;padding:9px 12px;background:#f3f5fa;border-radius:9px;font-size:13.5px}
+h2.sec{font-size:15.5px;margin:26px 0 10px;padding:6px 0 6px 10px;border-left:4px solid #2f5fd0;background:linear-gradient(90deg,#eef3ff,transparent 60%)}
+.q{margin:7px 0}
+.q b{color:#2f5fd0}
+.sheet{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+.sheet th,.sheet td{border:1px solid #c9d0dd;padding:7px 8px;text-align:left}
+.sheet th{background:#f3f5fa;font-size:12.5px;color:#5a6478;white-space:nowrap}
+.line{border-bottom:1px dashed #b9c2d4;display:inline-block;min-width:180px}
+.box{background:#f7f8fc;border:1px solid #d6dbe6;border-radius:10px;padding:10px 14px;font-size:13.5px;margin:8px 0}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:10px 0}
+.cell{border:1px dashed #b9c2d4;height:104px;border-radius:10px;position:relative}
+.cell span{position:absolute;left:6px;top:4px;font-size:11.5px;color:#5a6478}
+.answers{margin-top:34px;border-top:3px double #2f5fd0;padding-top:14px}
+.answers.hide{display:none}
+.answers h3{font-size:15px;margin:0 0 8px;color:#2f5fd0}
+.anslist{font-size:13px;color:#2b3340}
+.anslist p{margin:4px 0}
+.note{background:#f7f8fc;border-left:3px solid #c9d0dd;padding:8px 12px;font-size:12.5px;color:#5a6478;border-radius:0 8px 8px 0}
+@media (max-width:640px){main{padding:18px 16px 32px;margin:10px}.grid{grid-template-columns:repeat(2,1fr)}}
+@media print{
+  body{background:#fff;font-size:11pt;line-height:1.6}
+  .no-print{display:none!important}
+  main{box-shadow:none;border-radius:0;padding:0;margin:0;max-width:100%}
+  .answers{display:none!important}
+  .answers.keep{display:block!important;page-break-before:always}
+  h2.sec{break-after:avoid}.q,.sheet tr,.box,.grid{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="bar no-print">
+  <a href="../index.html">← 対策サイト</a><a href="../files.html">プリント集ファイル</a>
+  <label><input type="checkbox" id="inc"> 印刷に解答・解説を含める</label>
+  <button onclick="window.print()">印刷 / PDF保存</button>
+</div>
+
+<main>
+<header class="hd">
+  <h1>数学 練習プリント（全36問）</h1>
+  <p>中1 2学期中間考査対策 ／ 範囲：4章 変化と対応（関数・比例・反比例）／5章 平面図形（移動・円とおうぎ形・基本の作図）／巻末「力をつけよう」</p>
+  <p class="nm">中学1年　　組　　番　氏名（　　　　　　　　　　）　　実施日：　　月　　日　　　所要時間の目安：45分</p>
+</header>
+
+<div class="box"><b>覚えておく型</b>　比例＝<b>y＝ax</b>（原点を通る直線）／反比例＝<b>y＝a/x</b>（原点を通らない双曲線）／比例定数 a は「1組のx・yを式に代入して求める」／おうぎ形は「円全体の何割か」で考える。<br>
+比例・反比例の問題は、<b>小学校の解き方ではなく式とグラフで解く</b>こと（評価されない場合があります）。</div>
+
+<h2 class="sec">1　比例定数と式（6問）</h2>
+<p class="q">(1) y は x に比例し、x＝4 のとき y＝12。y を x の式で表すと（<span class="line"></span>）</p>
+<p class="q">(2) y は x に比例し、x＝3 のとき y＝−9。y を x の式で表すと（<span class="line"></span>）</p>
+<p class="q">(3) y は x に反比例し、x＝2 のとき y＝3。y を x の式で表すと（<span class="line"></span>）</p>
+<p class="q">(4) y は x に反比例し、x＝−4 のとき y＝2。比例定数は（<span class="line"></span>）、式は（<span class="line"></span>）</p>
+<p class="q">(5) y＝−12/x で、x＝6 のとき y＝（<span class="line"></span>）</p>
+<p class="q">(6) y＝5x で、y＝35 のとき x＝（<span class="line"></span>）</p>
+
+<h2 class="sec">2　変域（4問）</h2>
+<p class="q">(1) y＝2x で、x の変域が 1≦x≦5 のとき、y の変域は（<span class="line"></span>）</p>
+<p class="q">(2) y＝2x で、x の変域が −3≦x≦2 のとき、y の変域は（<span class="line"></span>）</p>
+<p class="q">(3) y＝6/x で、x の変域が 1≦x≦6 のとき、y の変域は（<span class="line"></span>）</p>
+<p class="q">(4) y＝−12/x で、x の変域が 2≦x≦4 のとき、y の変域は（<span class="line"></span>）</p>
+<div class="note">反比例の変域は「xの端の値でyがどうなるか」を両端で計算し、グラフの形（右上がり／右下がり）で判断する。マイナスの範囲では大小が逆転する点に注意。</div>
+
+<h2 class="sec">3　グラフから式を読む（4問）</h2>
+<p class="q">(1) 原点を通る直線が点(2, 6)を通っている。式は（<span class="line"></span>）</p>
+<p class="q">(2) 原点を通る直線が点(3, −9)を通っている。式は（<span class="line"></span>）</p>
+<p class="q">(3) 反比例のグラフが点(2, 4)を通っている。式は（<span class="line"></span>）</p>
+<p class="q">(4) 反比例のグラフが点(−3, 1)を通っている。式は（<span class="line"></span>）</p>
+
+<h2 class="sec">4　おうぎ形（6問）</h2>
+<p class="q">(1) 半径9cm、中心角120°の弧の長さは（<span class="line"></span>）、面積は（<span class="line"></span>）</p>
+<p class="q">(2) 半径4cm、中心角45°の弧の長さは（<span class="line"></span>）、面積は（<span class="line"></span>）</p>
+<p class="q">(3) 半径6cm、弧の長さ4πcmのおうぎ形の中心角は（<span class="line"></span>）、面積は（<span class="line"></span>）</p>
+<p class="q">(4) 半径10cm、中心角216°の弧の長さは（<span class="line"></span>）、面積は（<span class="line"></span>）</p>
+<p class="q">(5) 中心角90°、面積9πcm²のおうぎ形の半径は（<span class="line"></span>）</p>
+<p class="q">(6) (5)の弧の長さは（<span class="line"></span>）</p>
+
+<h2 class="sec">5　変化の割合（3問）</h2>
+<p class="q">(1) y＝4x で、x が 2 から 5 まで増加するときの変化の割合は（<span class="line"></span>）</p>
+<p class="q">(2) y＝12/x で、x が 2 から 6 まで増加するときの変化の割合は（<span class="line"></span>）</p>
+<p class="q">(3) y＝−3x で、x が −1 から 3 まで増加するときの変化の割合は（<span class="line"></span>）</p>
+
+<h2 class="sec">6　関数かどうかの判断（5問）</h2>
+<div class="note">y が x の関数である…xの値を決めるとyの値がただ1つに決まる関係。関数で<b>ない</b>ものを選び、理由を書きなさい。</div>
+<p class="q">ア 半径 x cm の円の面積 y cm²　イ 1個80円のリンゴ x 個の代金 y 円　ウ x 歳の人の身長 y cm<br>
+エ 面積24cm²の長方形の縦 x cm と横 y cm　オ 1辺 x cm の正方形の周の長さ y cm</p>
+<p class="q">関数でないもの（<span class="line"></span>）　理由（<span class="line"></span>）</p>
+<p class="q">エの式（<span class="line"></span>）、アの式（<span class="line"></span>）</p>
+
+<h2 class="sec">7　作図（4問）</h2>
+<div class="note">コンパスと定規を使い、作図の線は消さずに残すこと。作図の根拠も書くこと。</div>
+<div class="grid">
+  <div class="cell"><span>(1) 直線ℓ上の点Pを通る垂線</span></div>
+  <div class="cell"><span>(2) ∠AOBの二等分線</span></div>
+  <div class="cell"><span>(3) 線分ABの垂直二等分線</span></div>
+  <div class="cell"><span>(4) 3辺が3cm・4cm・5cmの三角形</span></div>
+</div>
+<p class="q">(1) の作図で「垂直」といえる根拠を、（<span class="line"></span>）の性質を使って説明しなさい。</p>
+<p class="q">(3) の作図で、線分ABの両端から等しい距離にある点の集まりが（<span class="line"></span>）であることを説明しなさい。</p>
+
+<h2 class="sec">8　説明する問題（4問）</h2>
+<p class="q">(1) 比例のグラフは必ず原点を通るのはなぜか。</p>
+<p class="q">(2) 反比例のグラフは原点を通らないのはなぜか。</p>
+<p class="q">(3) 比例のグラフをかくには、原点以外に点が1つあればよいのはなぜか。</p>
+<p class="q">(4) 図形の移動3種類（平行移動・回転移動・対称移動）の違いを、対応する点の結び方にふれて説明しなさい。</p>
+
+<section class="answers hide" id="ans">
+  <h3>解答と解説</h3>
+  <div class="anslist">
+    <p><b>1</b> (1) y＝3x　(2) y＝−3x　(3) y＝6/x　(4) a＝−8／y＝−8/x　(5) y＝−2　(6) x＝7</p>
+    <p><b>2</b> (1) 2≦y≦10　(2) −6≦y≦4　(3) 1≦y≦6　(4) −6≦y≦−3</p>
+    <p><b>3</b> (1) y＝3x　(2) y＝−3x　(3) y＝8/x　(4) y＝−3/x</p>
+    <p><b>4</b> (1) 弧＝6πcm・面積＝27πcm²　(2) 弧＝πcm・面積＝2πcm²　(3) 中心角＝120°・面積＝12πcm²　(4) 弧＝12πcm・面積＝60πcm²　(5) 半径＝6cm　(6) 弧＝3πcm</p>
+    <p><b>5</b> (1) 4　(2) −1（xが2→6でyは6→2、変化の割合＝(2−6)÷(6−2)）　(3) −3</p>
+    <p><b>6</b> 関数でないのは<b>ウ</b>（xの値が決まっても身長は1つに決まらない）。エの式は y＝24/x、アの式は y＝πx²（面積は比例でも反比例でもないが、xを決めればyが1つに決まるので関数）。</p>
+    <p><b>7</b> (1) 点Pを中心に引いた円と直線ℓとの交点2つから、等しい半径の円をかいて交わらせた点とPを結ぶ。根拠＝2点から等しい距離にある点は垂直二等分線上にある。(2) 頂点Oを中心に円弧→2辺との交点から等しい半径の円弧→交点とOを結ぶ。(3) AとBをそれぞれ中心に等しい半径の円をかき、2つの交点を結ぶ。根拠＝線分の両端から等しい距離にある点の集まり。(4) 3辺の長さが決まれば三角形は1つに決まるので、1辺をひいてから両端からコンパスで交点をとる。</p>
+    <p><b>8</b> 模範例：(1) y＝ax に x＝0 を代入すると y＝0 になるから。(2) y＝a/x で x＝0 のとき y の値を求めることができない（0で割れない）から。(3) 比例定数は1組の x・y から決まり、原点とその点を結べば直線が1本に決まるから。(4) 平行移動は対応する点を結ぶ線分が平行で長さが等しい／回転移動はある点から等距離で角が等しい／対称移動は対応する点を結ぶ線分が対称の軸に垂直で、軸で二等分される。</p>
+  </div>
+</section>
+</main>
+<script>
+var inc=document.getElementById('inc');
+inc.addEventListener('change',function(){
+  document.querySelectorAll('.answers').forEach(function(a){
+    a.classList.toggle('keep',inc.checked);
+    a.classList.toggle('hide',!inc.checked);
+  });
+});
+</script>
+</body>
+</html>

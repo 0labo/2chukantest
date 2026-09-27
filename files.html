@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>練習プリント集｜中1 2学期中間考査 対策ファイル</title>
-<script>document.documentElement.className += ' js';</script>
 <style>
 :root{
   --ink:#0b0d12;--ink2:#4b5565;--ink3:#8a93a3;--bg:#fbfbfd;--card:#fff;--line:#e3e6ee;--soft:#f4f6fb;
@@ -75,10 +74,12 @@ tbody tr:hover{background:var(--soft)}
 pre{background:var(--ink);color:var(--bg);border-radius:12px;padding:14px 16px;overflow:auto;font-size:12.5px;line-height:1.7}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 
-/* JSが有効なときだけ初期状態を隠す（無効時・印刷時は常に表示） */
-html.js .reveal{opacity:0;transform:translateY(26px)}
-.reveal.in{opacity:1;transform:none;transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-@media print{.reveal{opacity:1!important;transform:none!important}}
+.reveal{opacity:0;transform:translateY(26px)}
+@supports (animation-timeline:view()){
+  .reveal{opacity:1;transform:none;animation:rv linear both;animation-timeline:view();animation-range:entry 8% cover 32%}
+  @keyframes rv{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+}
+.reveal.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .hide{display:none!important}
 
 footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink3);line-height:1.9}
@@ -314,19 +315,19 @@ document.querySelectorAll('.f').forEach(function(b){
   });
 });
 
-/* ---- スクロールで現れる（IntersectionObserver＋保険のタイマー） ---- */
+/* ---- scroll reveal fallback (when scroll-driven animations unsupported) ---- */
 (function(){
   var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var els=[].slice.call(document.querySelectorAll('.reveal'));
-  function showAll(){ els.forEach(function(e){ e.classList.add('in') }) }
-  if(rm || !('IntersectionObserver' in window)){ showAll(); return }
+  var supported=window.CSS&&CSS.supports&&CSS.supports('animation-timeline: view()');
+  var els=document.querySelectorAll('.reveal');
+  if(rm){ els.forEach(function(e){e.classList.add('in')}); return }
+  if(supported) return;
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in')}); return }
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target) } });
-  },{rootMargin:'0px 0px -10% 0px',threshold:.08});
+  },{rootMargin:'0px 0px -12% 0px',threshold:.12});
   els.forEach(function(e){ io.observe(e) });
-  setTimeout(showAll,2500);
 })();
 </script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
